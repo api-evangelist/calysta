@@ -1,0 +1,89 @@
+# Calysta
+
+> Calysta, Inc. is a cellular agriculture company founded in 2012, headquartered in San Mateo, California,
+> with operations in Memphis, Tennessee (NouriTech), Wilton/Teesside in the United Kingdom (Calysta UK Ltd.)
+> and Singapore (Calysta Asia Pte Ltd.). It produces protein ingredients via a patented gas-fermentation
+> platform in which a naturally-occurring microorganism converts carbon and energy into a non-GMO
+> single-cell protein, using no arable land and no plant or animal inputs. Calysta publishes **no public
+> API, developer portal, SDK, or machine-readable specification** — its fermentation platform is
+> industrial process technology sold as physical protein ingredients, not software offered to developers.
+
+## Company
+
+- [Homepage](https://calysta.com/): Sustainable protein ingredients for feed and food.
+- [Who We Are](https://calysta.com/who-we-are/): Company background, founding, and product family.
+- [Leadership](https://calysta.com/who-we-are/leadership/): Executive team.
+- [Board](https://calysta.com/who-we-are/board/): Board of directors.
+- [Partners](https://calysta.com/who-we-are/partners/): Commercial and joint-venture partners.
+- [Locations](https://calysta.com/who-we-are/locations/): San Mateo and Menlo Park CA, Memphis TN, Wilton/Teesside UK, and Singapore.
+- [Our Vision](https://calysta.com/our-vision/): Company mission and long-term goals.
+- [Contacts](https://calysta.com/contacts/): General inquiry channel.
+- [Careers](https://calysta.com/careers/): Open roles.
+- [LinkedIn](https://www.linkedin.com/company/calysta-energy): Company profile.
+- [X / Twitter](https://x.com/feedkind): FeedKind product account.
+
+## Process (industrial process technology — not a developer product)
+
+- [Our Process](https://calysta.com/our-process/): Circular cellular agriculture built on one patented fermentation platform.
+- [Biomass Fermentation](https://calysta.com/biomass-fermentation/): Gas fermentation of carbon and energy into protein.
+- [Single Cell Protein](https://calysta.com/single-cell-protein/): The protein produced by the platform's microorganism.
+- [Scale](https://calysta.com/scale/): Production capacity and scale-up approach.
+- [GHG to Feed and Food](https://calysta.com/ghg-to-feed-and-food/): Converting greenhouse gases into feed and food ingredients.
+
+## Markets and products
+
+- [Markets](https://calysta.com/markets/): Index of served markets.
+- [Fish and Livestock](https://calysta.com/markets/fish-and-livestock/): FeedKind protein for aquaculture and livestock feed.
+- [Pets](https://calysta.com/markets/pets/): FeedKind Pet for cat and dog nutrition.
+- [Food Ingredients](https://calysta.com/markets/food-ingredients/): Positive Protein, a microbial protein ingredient for human food.
+- [FeedKind](https://feedkind.com/): Dedicated product site for the FeedKind protein family.
+- [Calysseo](https://www.calysseo.com/): 50/50 joint venture with Adisseo that sells FeedKind Aqua globally and operates the first production plant in China.
+
+## Sustainability
+
+- [Sustainability](https://calysta.com/sustainability/): Environmental position and impact claims.
+- [Carbon Net Zero](https://calysta.com/carbon-net-zero/): FeedKind Net Zero and renewable-energy-powered production.
+- [Water](https://calysta.com/water/): Water-use profile of the fermentation platform.
+- [Land](https://calysta.com/land/): Arable-land displacement claims.
+
+## News
+
+- [News](https://calysta.com/news/): Company announcements and press coverage.
+- [News RSS](https://calysta.com/feed/): RSS feed of announcements.
+- [Tech Papers](https://calysta.com/news/tech-papers/): Technical and scientific publications.
+- [Videos](https://calysta.com/news/videos/): Video library.
+- [Newsletter](https://calysta.com/news/newsletter/): Newsletter archive and subscription.
+
+## Legal
+
+- [Privacy Policy](https://calysta.com/privacy-policy/)
+- [Terms and Conditions](https://calysta.com/terms-and-conditions/)
+
+## API surface
+
+Calysta has no public API surface. Probed 2026-08-09 against `https://calysta.com`. The host answers
+every unknown path with a soft 404 — HTTP 200 carrying the 148,659-byte homepage — which was confirmed
+with a random control path, so those 200s are not evidence of a resource. Verified against that control:
+`/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`, `/docs`, `/redoc`,
+`/graphql`, `/apis.json`, `/.well-known/agent-card.json`, `/.well-known/agent.json`,
+`/.well-known/api-catalog`, `/.well-known/openid-configuration`, `/.well-known/oauth-authorization-server`,
+`/.well-known/oauth-protected-resource` and `/.well-known/ai-plugin.json` all return the homepage, not a
+resource. `/llms.txt` and `/.well-known/security.txt` return a genuine HTTP 404. The hosts `api.`,
+`developer.`, `developers.`, `docs.`, `portal.` and `app.calysta.com` do not resolve (NXDOMAIN). The
+complete `wp-sitemap.xml` (33 pages) contains no developer, documentation, or API page.
+
+The site runs WordPress and exposes the stock WordPress REST API at `https://calysta.com/wp-json/`
+(HTTP 200, 273 routes). Every namespace there is WordPress core or a third-party plugin — `wp/v2`,
+`oembed/1.0`, `elementor/*`, `wordfence/v1`, `wpe/cache-plugin/v1`, `redirection/v1`. There is no
+first-party Calysta namespace, so this is content-management plumbing for the marketing site rather
+than a product API, and it is not recorded as an API surface.
+
+A GitHub organization exists at `https://github.com/Calysta` with a single 2016-era Ruby repository
+(`zProject`) whose homepage field points at `project.calysta.com`, a host that does not resolve. The
+organization publishes no name, email, website or public members, so it is not attributable to this
+company and is not wired into the profile.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/calysta/refs/heads/main/apis.yml): APIs.json 0.20 profile for Calysta.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/calysta/refs/heads/main/security/calysta-domain-security.yml): Probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC posture.

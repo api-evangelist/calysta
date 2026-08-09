@@ -1,17 +1,35 @@
 aid: calysta
 name: Calysta
-description: 'Calysta is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Calysta, Inc. is a cellular agriculture company founded in 2012 and headquartered in
+  San Mateo, California, with operations in Memphis, Tennessee (NouriTech), Wilton/Teesside in the
+  United Kingdom (Calysta UK Ltd.) and Singapore (Calysta Asia Pte Ltd.). It produces protein
+  ingredients through a patented gas-fermentation platform in which a naturally-occurring
+  microorganism converts carbon and energy into a non-GMO single-cell protein, using no arable land
+  and no plant or animal inputs. Its product family includes FeedKind for aquaculture and livestock,
+  FeedKind Pet, FeedKind Net Zero and Positive Protein for human food ingredients; FeedKind Aqua is
+  sold globally through Calysseo, a 50/50 joint venture with Adisseo whose first production plant in
+  China manufactures thousands of tonnes per year. Calysta sells physical protein ingredients to feed
+  and food manufacturers — its fermentation platform is industrial process technology, not commercial
+  software — and it publishes no public API, developer portal, SDK, or machine-readable
+  specification.'
+image: https://calysta.com/wp-content/uploads/2022/03/calystalogo-1.png
 url: https://raw.githubusercontent.com/api-evangelist/calysta/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-09'
 modified: '2026-08-09'
 tags:
 - Company
+- Biotechnology
+- Cellular Agriculture
+- Fermentation
+- Alternative Protein
+- Animal Feed
+- Aquaculture
+- Food Ingredients
+- Sustainability
+- Pet Nutrition
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,57 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/calysta-domain-security.yml
+- type: LLMsTxt
+  url: llms/calysta-llms.txt
 - type: Website
-  url: https://forgeglobal.com/calysta_stock/
+  url: https://calysta.com/
+- type: About
+  url: https://calysta.com/who-we-are/
+- type: Blog
+  url: https://calysta.com/news/
+- type: BlogRSS
+  url: https://calysta.com/feed/
+- type: Support
+  url: https://calysta.com/contacts/
+- type: Careers
+  url: https://calysta.com/careers/
+- type: TermsOfService
+  url: https://calysta.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://calysta.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/calysta-energy
+- type: Twitter
+  url: https://x.com/feedkind
+x-enrichment:
+  date: '2026-08-09'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: Calysta sells single-cell protein ingredients (FeedKind, Positive Protein) manufactured by an
+    industrial gas-fermentation process; its complete 33-page WordPress sitemap has no developer, docs
+    or API page, and the only machine-readable surface on the host is the stock WordPress REST API at
+    /wp-json/ whose 273 routes are all core or third-party plugin namespaces with no first-party
+    Calysta namespace.
+  evidence:
+  - url: https://calysta.com/wp-sitemap.xml
+    status: 200
+  - url: https://calysta.com/llms.txt
+    status: 404
+  - url: https://calysta.com/.well-known/security.txt
+    status: 404
+  - url: https://calysta.com/zzz-api-evangelist-control.json
+    status: 200
+  - url: https://calysta.com/.well-known/agent-card.json
+    status: 200
+  - url: https://api.calysta.com/
+    status: 0
+  x-evidence-note: The two HTTP 200 rows are the soft-404 control pair — calysta.com answers every
+    unknown path with the identical 148,659-byte homepage, so the 200 on /.well-known/agent-card.json
+    matches the random control byte-for-byte and is not an agent card. No A2A artifact was written.
+  checked: '2026-08-09'
