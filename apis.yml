@@ -12,6 +12,17 @@ description: 'Calysta, Inc. is a cellular agriculture company founded in 2012 an
   and food manufacturers — its fermentation platform is industrial process technology, not commercial
   software — and it publishes no public API, developer portal, SDK, or machine-readable
   specification.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://calysta.com/wp-content/uploads/2022/03/calystalogo-1.png
 url: https://raw.githubusercontent.com/api-evangelist/calysta/refs/heads/main/apis.yml
 x-type: company
